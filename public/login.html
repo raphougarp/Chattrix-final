@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chattrix - Connexion</title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body class="login-body">
+  <div class="login-box">
+    <div class="login-title">Chattrix</div>
+
+    <form action="/login" method="POST">
+      <input
+        type="text"
+        name="username"
+        placeholder="Identifiant"
+        class="login-input login-input-username"
+        required
+      />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Mot de passe"
+        class="login-input login-input-password"
+        required
+      />
+
+      <button type="submit" class="login-button">
+        Se connecter
+      </button>
+    </form>
+  </div>
+</body>
+</html>

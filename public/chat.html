@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chattrix - Chat</title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body class="main-body">
+  <div class="app-container">
+    <!-- Sidebar gauche -->
+    <div class="sidebar-left">
+      <!-- Bouton Créer un groupe -->
+      <button class="btn-create-group">
+        Créer un groupe
+      </button>
+
+      <!-- Liste des conversations -->
+      <div class="conversations-list">
+        <!-- Exemple de conversation -->
+        <div class="conversation-item">
+          <div class="conversation-avatar"></div>
+          <div class="conversation-status status-online"></div>
+          <div class="conversation-name">Groupe général</div>
+        </div>
+        <div class="conversation-item">
+          <div class="conversation-avatar"></div>
+          <div class="conversation-status status-offline"></div>
+          <div class="conversation-name">Utilisateur 1</div>
+        </div>
+      </div>
+
+      <!-- Bouton paramètres -->
+      <button class="btn-settings">
+        Paramètres
+      </button>
+    </div>
+
+    <!-- Zone chat -->
+    <div class="chat-zone">
+      <!-- Barre supérieure -->
+      <div class="chat-header">
+        <div class="chat-title" id="chat-title">
+          Nom utilisateur / groupe
+        </div>
+        <div class="chat-header-buttons">
+          <button class="chat-header-btn btn-block">Bloquer</button>
+          <button class="chat-header-btn btn-leave">Quitter groupe</button>
+          <button class="chat-header-btn btn-options">Options</button>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="chat-messages" id="chat-messages">
+        <div class="message-row other">
+          <div class="message-bubble">
+            Bonjour, ceci est un message d’un autre utilisateur.
+          </div>
+        </div>
+        <div class="message-row me">
+          <div class="message-bubble">
+            Et ça, c’est ton message.
+          </div>
+        </div>
+      </div>
+
+      <!-- Barre d’entrée -->
+      <div class="chat-input-bar">
+        <button class="btn-attach">📎</button>
+        <input
+          type="text"
+          class="chat-input"
+          placeholder="Écrire un message..."
+          id="message-input"
+        />
+        <button class="btn-send" id="btn-send">Envoyer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/public/js/app.js"></script>
+</body>
+</html>

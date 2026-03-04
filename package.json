@@ -1,0 +1,13 @@
+{
+  "name": "chattrix",
+  "version": "1.0.0",
+  "description": "Chattrix - messagerie privée",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "render:start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

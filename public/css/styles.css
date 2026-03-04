@@ -1,0 +1,340 @@
+/* --- ÉCRAN DE CONNEXION --- */
+
+body.login-body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a; /* bleu nuit */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.login-box {
+  position: relative;
+  width: 420px;
+  height: 280px;
+  background-color: #111827;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.login-title {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.login-input {
+  position: absolute;
+  left: 40px;
+  width: 340px;
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background-color: #020617;
+  color: #ffffff;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #6b7280;
+}
+
+.login-input-username {
+  top: 90px;
+}
+
+.login-input-password {
+  top: 145px;
+}
+
+.login-button {
+  position: absolute;
+  top: 205px;
+  left: 40px;
+  width: 340px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+
+body.main-body {
+  margin: 0;
+  padding: 0;
+  background-color: #020617;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+/* Sidebar gauche */
+
+.sidebar-left {
+  width: 280px;
+  background-color: #020617;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bouton Créer un groupe */
+
+.btn-create-group {
+  margin-top: 12px;
+  margin-left: 12px;
+  width: 256px;
+  height: 38px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-create-group:hover {
+  background-color: #1d4ed8;
+}
+
+/* Liste conversations */
+
+.conversations-list {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  overflow-y: auto;
+}
+
+.conversation-item {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.conversation-item:hover {
+  background-color: #0b1120;
+}
+
+.conversation-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: #1f2937;
+}
+
+/* Statut : left 36 px */
+.conversation-status {
+  position: absolute;
+  left: 36px;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+}
+
+.status-online {
+  background-color: #22c55e;
+}
+
+.status-offline {
+  background-color: #ef4444;
+}
+
+/* Nom : left 52 px */
+
+.conversation-name {
+  position: absolute;
+  left: 52px;
+  font-size: 14px;
+}
+
+/* Bouton paramètres */
+
+.btn-settings {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: auto;
+  border: none;
+  background: none;
+  color: #9ca3af;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-settings:hover {
+  color: #ffffff;
+}
+
+/* Zone chat */
+
+.chat-zone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #020617;
+}
+
+/* Barre supérieure chat */
+
+.chat-header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid #111827;
+}
+
+.chat-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Boutons droite */
+
+.chat-header-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-header-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-block {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn-block:hover {
+  background-color: #b91c1c;
+}
+
+.btn-leave,
+.btn-options {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+.btn-leave:hover,
+.btn-options:hover {
+  background-color: #1f2937;
+}
+
+/* Messages */
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.message-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.message-row.other {
+  justify-content: flex-start;
+}
+
+.message-row.me {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: 60%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.3;
+  background-color: #111827;
+}
+
+.message-row.me .message-bubble {
+  background-color: #2563eb;
+}
+
+/* Barre d'entrée */
+
+.chat-input-bar {
+  height: 56px;
+  border-top: 1px solid #111827;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  gap: 8px;
+}
+
+.btn-attach {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.btn-attach:hover {
+  color: #ffffff;
+}
+
+.chat-input {
+  flex: 1;
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background-color: #020617;
+  color: #ffffff;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-input::placeholder {
+  color: #6b7280;
+}
+
+.btn-send {
+  border: none;
+  border-radius: 6px;
+  height: 38px;
+  padding: 0 14px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  background-color: #1d4ed8;
+}
