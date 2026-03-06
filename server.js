@@ -2,8 +2,6 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-
-// Render fournit le port dans process.env.PORT
 const PORT = process.env.PORT || 3000;
 
 // Pour lire les formulaires POST
@@ -17,16 +15,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-// Traitement du login (pour l'instant : accepte tout)
+// Traitement du login (pour l'instant: pas de vraie vérif)
 app.post('/login', (req, res) => {
   const { username } = req.body;
-  // Plus tard : vérif BDD, ban, admin, etc.
+  // On redirige simplement vers /chat avec le nom dans l'URL
   res.redirect(`/chat?user=${encodeURIComponent(username || 'Utilisateur')}`);
 });
 
-// Page principale chat
+// Page principale de chat
 app.get('/chat', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'chat.html'));
+});
+
+// Panneau admin
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
 });
 
 app.listen(PORT, () => {
