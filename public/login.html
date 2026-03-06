@@ -5,31 +5,54 @@
   <title>Chattrix - Connexion</title>
   <link rel="stylesheet" href="/public/css/styles.css" />
 </head>
-<body class="login-body">
-  <div class="login-box">
-    <div class="login-title">Chattrix</div>
+<body class="login-body gradient-bg">
+  <div class="login-card">
+    <h1 class="login-title-main">Chattrix</h1>
+    <p class="login-subtitle">Messagerie scolaire sécurisée</p>
 
-    <form action="/login" method="POST">
-      <input
-        type="text"
-        name="username"
-        placeholder="Identifiant"
-        class="login-input login-input-username"
-        required
-      />
+    <form action="/login" method="POST" class="login-form">
+      <div class="login-field">
+        <input
+          type="text"
+          name="username"
+          placeholder="Nom d'utilisateur"
+          class="login-input-modern"
+          required
+        />
+      </div>
 
-      <input
-        type="password"
-        name="password"
-        placeholder="Mot de passe"
-        class="login-input login-input-password"
-        required
-      />
+      <div class="login-field password-wrapper">
+        <input
+          type="password"
+          name="password"
+          placeholder="Mot de passe"
+          class="login-input-modern"
+          id="password-input"
+          required
+        />
+        <button type="button" class="password-toggle" id="toggle-password">
+          👁
+        </button>
+      </div>
 
-      <button type="submit" class="login-button">
+      <button type="submit" class="login-submit-gradient">
         Se connecter
       </button>
     </form>
   </div>
+
+  <script>
+    // petit toggle "voir mot de passe"
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('password-input');
+      const btn = document.getElementById('toggle-password');
+      if (!input || !btn) return;
+
+      btn.addEventListener('click', () => {
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+      });
+    });
+  </script>
 </body>
 </html>
