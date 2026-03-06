@@ -1,4 +1,4 @@
-// Lire le nom d'utilisateur dans l'URL ( ?user=xxx )
+// Lire le nom d'utilisateur dans l'URL (?user=xxx)
 function getUsernameFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get('user') || 'Utilisateur';
@@ -6,7 +6,10 @@ function getUsernameFromUrl() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const username = getUsernameFromUrl();
+
+  // Si un jour tu affiches le nom dans le header, tu pourras utiliser ça
   const chatTitle = document.getElementById('chat-title');
+
   const messagesContainer = document.getElementById('chat-messages');
   const input = document.getElementById('message-input');
   const btnSend = document.getElementById('btn-send');
@@ -15,7 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     chatTitle.textContent = username;
   }
 
+  // ---- Envoi de message dans la zone de chat ----
   function sendMessage() {
+    if (!messagesContainer || !input) return;
+
     const text = input.value.trim();
     if (!text) return;
 
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     row.className = 'message-row me';
 
     const bubble = document.createElement('div');
-    bubble.className = 'message-bubble';
+    bubble.className = 'message-bubble me';
     bubble.textContent = text;
 
     row.appendChild(bubble);
@@ -40,6 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         sendMessage();
       }
+    });
+  }
+
+  // ---- Bouton ⚙ pour aller au panneau admin ----
+  const adminBtn = document.getElementById('btn-admin');
+  if (adminBtn) {
+    adminBtn.addEventListener('click', () => {
+      window.location.href = '/admin';
     });
   }
 });
