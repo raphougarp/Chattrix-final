@@ -5,78 +5,70 @@
   <title>Chattrix - Chat</title>
   <link rel="stylesheet" href="/public/css/styles.css" />
 </head>
-<body class="main-body">
-  <div class="app-container">
-    <!-- Sidebar gauche -->
-    <div class="sidebar-left">
-      <!-- Bouton Créer un groupe -->
-      <button class="btn-create-group">
-        Créer un groupe
-      </button>
-
-      <!-- Liste des conversations -->
-      <div class="conversations-list">
-        <!-- Exemple de conversation -->
-        <div class="conversation-item">
-          <div class="conversation-avatar"></div>
-          <div class="conversation-status status-online"></div>
-          <div class="conversation-name">Groupe général</div>
-        </div>
-        <div class="conversation-item">
-          <div class="conversation-avatar"></div>
-          <div class="conversation-status status-offline"></div>
-          <div class="conversation-name">Utilisateur 1</div>
+<body class="main-body gradient-bg">
+  <div class="app-shell">
+    <!-- SIDEBAR GAUCHE -->
+    <aside class="sidebar">
+      <!-- En-tête sidebar -->
+      <div class="sidebar-header">
+        <div class="sidebar-logo">Chattrix</div>
+        <div class="sidebar-header-buttons">
+          <button class="icon-btn pink">
+            ⚙
+          </button>
+          <button class="icon-btn">
+            ⤴
+          </button>
         </div>
       </div>
 
-      <!-- Bouton paramètres -->
-      <button class="btn-settings">
-        Paramètres
-      </button>
-    </div>
-
-    <!-- Zone chat -->
-    <div class="chat-zone">
-      <!-- Barre supérieure -->
-      <div class="chat-header">
-        <div class="chat-title" id="chat-title">
-          Nom utilisateur / groupe
-        </div>
-        <div class="chat-header-buttons">
-          <button class="chat-header-btn btn-block">Bloquer</button>
-          <button class="chat-header-btn btn-leave">Quitter groupe</button>
-          <button class="chat-header-btn btn-options">Options</button>
+      <!-- Profil admin -->
+      <div class="sidebar-profile">
+        <div class="avatar-circle">A</div>
+        <div class="profile-texts">
+          <div class="profile-name">Administrateur</div>
+          <div class="profile-handle">@admin</div>
         </div>
       </div>
 
-      <!-- Messages -->
-      <div class="chat-messages" id="chat-messages">
-        <div class="message-row other">
-          <div class="message-bubble">
-            Bonjour, ceci est un message d’un autre utilisateur.
-          </div>
-        </div>
-        <div class="message-row me">
-          <div class="message-bubble">
-            Et ça, c’est ton message.
-          </div>
-        </div>
-      </div>
-
-      <!-- Barre d’entrée -->
-      <div class="chat-input-bar">
-        <button class="btn-attach">📎</button>
+      <!-- Barre de recherche -->
+      <div class="sidebar-search">
         <input
           type="text"
-          class="chat-input"
-          placeholder="Écrire un message..."
-          id="message-input"
+          placeholder="Rechercher..."
+          class="sidebar-search-input"
         />
-        <button class="btn-send" id="btn-send">Envoyer</button>
       </div>
-    </div>
-  </div>
 
-  <script src="/public/js/app.js"></script>
+      <!-- Mes groupes -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">
+          Mes Groupes
+          <button class="icon-btn small green">+</button>
+        </div>
+      </div>
+
+      <!-- Conversations -->
+      <div class="sidebar-section flex-1">
+        <div class="sidebar-section-title">
+          Conversations
+        </div>
+        <!-- plus tard : liste des conversations -->
+      </div>
+    </aside>
+
+    <!-- ZONE PRINCIPALE (WELCOME) -->
+    <main class="main-panel">
+      <div class="welcome-container">
+        <div class="welcome-icon-circle">
+          👥
+        </div>
+        <h1 class="welcome-title">Bienvenue sur Chattrix</h1>
+        <p class="welcome-text">
+          Sélectionnez une conversation ou créez un groupe pour commencer
+        </p>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
